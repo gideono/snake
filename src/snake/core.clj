@@ -39,7 +39,10 @@
   (q/background-float 0x20)
   ;draw food
   (q/stroke 0x00 0xff 0xff)
-  (doseq [[x y] @food] (q/point x y))
+  ; we draw each meal by running through @food with doseq,
+  ; where we use q/point to draw each point.
+  (doseq [[x y] @food]
+    (q/point x y))
   )
 
 ;input
