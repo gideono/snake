@@ -19,6 +19,10 @@
 ;****************** Game functions *******************
 ;*****************************************************
 
+(def HEIGHT 200)
+
+(def WIDTH 450)
+
 ; food (as set of points)
 (def food (atom #{}))
 
@@ -48,7 +52,7 @@
     (swap! snake #(vec (cons new (pop %))))) ; head+rest
   ;spwan food
   (when (askoracle 0.005)
-    (swap! food conj [(rand-int 450) (rand-int 200)]))
+    (swap! food conj [(rand-int WIDTH) (rand-int HEIGHT)]))
   )
 
 ;draw
@@ -79,7 +83,7 @@
 ;run
 (q/defsketch snake
              :title "Beach Boys Sweden 2d snake game"
-             :size [450 200]
+             :size [WIDTH HEIGHT]
              :setup (fn []
                       (q/smooth)
                       (q/no-stroke)
