@@ -29,9 +29,14 @@
 ; snake movement direction
 (def snake-dir (atom [1 0]))
 
-;We can calculate the new snake position
-;by adding the snake's head with the snake-dir:
-(v+ (first @snake) @snake-dir)
+; let the snake eat food
+(add-watch snake :key
+           (fn [k r os ns]
+             ; any meal under snake head?
+             (let [meal (get @food (first ns))]
+               (when meal
+                 (swap! food disj meal)
+                 (swap! snake #(vec (cons meal %))))))) ; add to snake
 ;*****************************************************
 ;****************** Core functions *******************
 ;*****************************************************
@@ -59,9 +64,17 @@
   ; where we use q/point to draw each point.
   (doseq [[x y] @food] (q/point x y)))
 
-;input
+; input
 (defn key-pressed []
-  )
+  (cond ; case doesn't work with the KeyEvents
+    (= (q/key-code) KeyEvent/VK_UP)
+    (reset! snake-dir [0 -1])
+    (= (q/key-code) KeyEvent/VK_DOWN)
+    (reset! snake-dir [0 1])
+    (= (q/key-code) KeyEvent/VK_LEFT)
+    (reset! snake-dir [-1 0])
+    (= (q/key-code) KeyEvent/VK_RIGHT)
+    (reset! snake-dir [1 0])))
 
 ;run
 (q/defsketch snake
