@@ -14,7 +14,14 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Leiningen: clojure-complete:0.2.3" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.core:1.5.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.gluegen-rt:1.5.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.itext:1.5.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.jogl:1.5.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.opengl:1.5.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojars.processing-core/org.processing.pdf:1.5.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.7.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.nrepl:0.2.10" level="project" />
+    <orderEntry type="library" name="Leiningen: quil:1.7.0" level="project" />
   </component>
 </module>

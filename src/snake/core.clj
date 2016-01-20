@@ -82,7 +82,7 @@
     (reset! snake-dir [1 0])))
 
 ;run
-(q/defsketch snake
+(q/defsketch snake-game
              :title "Beach Boys Sweden 2d snake game"
              :size [WIDTH HEIGHT]
              :setup (fn []
